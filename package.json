@@ -16,7 +16,7 @@
     "@babel/runtime": "^7.9.2",
     "@ethersproject/contracts": "5.0.0-beta.152",
     "@ethersproject/providers": "5.0.0-beta.144",
-    "@ethersproject/wallet": "5.0.0-beta.136",
+    "@ethersproject/wallet": "5.0.0-beta.141",
     "js-sha256": "^0.9.0"
   },
   "devDependencies": {
