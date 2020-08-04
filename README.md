@@ -5,6 +5,7 @@
 [![npm](https://img.shields.io/npm/v/3id-blockchain-utils.svg?style=for-the-badge)](https://www.npmjs.com/package/3id-blockchain-utils)
 [![Codecov](https://img.shields.io/codecov/c/github/3box/js-3id-blockchain-utils.svg?style=for-the-badge)](https://codecov.io/gh/3box/js-3id-blockchain-utils)
 [![Greenkeeper badge](https://badges.greenkeeper.io/3box/js-3id-blockchain-utils.svg)](https://greenkeeper.io/)
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fceramicnetwork%2Fjs-3id-blockchain-utils.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2Fceramicnetwork%2Fjs-3id-blockchain-utils?ref=badge_shield)
 
 This package contains a bunch of utilities that is used by 3ID and 3Box in order to create and verify links from blockchain addresses.
 
@@ -64,3 +65,6 @@ $ npm test
 
 ## Licence
 MIT © Joel Thorstensson
+
+
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fceramicnetwork%2Fjs-3id-blockchain-utils.svg?type=large)](https://app.fossa.com/projects/git%2Bgithub.com%2Fceramicnetwork%2Fjs-3id-blockchain-utils?ref=badge_large)
