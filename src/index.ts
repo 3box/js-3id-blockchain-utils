@@ -1,11 +1,13 @@
 import { AccountID } from 'caip'
 import { LinkProof } from './utils'
 import ethereum from './blockchains/ethereum'
+import filecoin from './blockchains/filecoin'
 
 const findDID = (did: string): string | undefined => did.match(/(did:(3|muport):[a-zA-Z0-9])\w+/)?.[0]
 
 const handlers = {
-  [ethereum.namespace]: ethereum
+  [ethereum.namespace]: ethereum,
+  [filecoin.namespace]: filecoin
 }
 
 async function createLink (

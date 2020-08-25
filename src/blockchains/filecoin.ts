@@ -5,6 +5,8 @@ import type { MessageParams } from '@zondax/filecoin-signing-tools'
 
 const namespace = 'fil'
 
+const moduleToImport = process.env.JEST_WORKER_ID ? "@zondax/filecoin-signing-tools/nodejs" : "@zondax/filecoin-signing-tools"
+
 function asTransaction(address: string, message: string): MessageParams {
     const messageHex = Buffer.from(message).toString('hex')
     return {
@@ -43,7 +45,7 @@ export async function authenticate(message: string, account: AccountID, provider
 }
 
 export async function validateLink (proof: LinkProof): Promise<LinkProof | null> {
-    const signingTools = await import("@zondax/filecoin-signing-tools/nodejs")
+    const signingTools = await import(moduleToImport)
     const account = new AccountID(proof.account)
     const consentMessage: ConsentMessage = {
         message: proof.message,
