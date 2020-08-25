@@ -12,7 +12,7 @@ const handlers = {
 
 async function createLink (
   did: string,
-  account: AccountID,
+  account: AccountID | string,
   provider: any,
   opts: any = {}
 ): Promise<LinkProof> {
@@ -46,7 +46,7 @@ async function validateLink (proof: LinkProof): Promise<LinkProof | null> {
 
 async function authenticate (
   message: string,
-  account: AccountID,
+  account: AccountID | string,
   provider: any
 ): Promise<string> {
   if (typeof account === 'string') account = new AccountID(account)
