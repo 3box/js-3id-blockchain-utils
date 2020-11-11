@@ -8,16 +8,18 @@ const namespace = 'fil'
 const moduleToImport = process.env.JEST_WORKER_ID ? "@zondax/filecoin-signing-tools/nodejs" : "@zondax/filecoin-signing-tools"
 
 function asTransaction(address: string, message: string): MessageParams {
-    const messageHex = Buffer.from(message).toString('hex')
+    const messageParams = Buffer.from(message).toString('base64')
     return {
-        from: address,
-        to: address,
-        value: "0",
-        method: 0,
-        gasPrice: "1",
-        gasLimit: 1000,
-        nonce: 0,
-        params: messageHex
+        From: address,
+        To: address,
+        Value: "0",
+        Method: 0,
+        GasPrice: "1",
+        GasLimit: 1000,
+        Nonce: 0,
+        Params: messageParams,
+        GasFeeCap: "1",
+        GasPremium: "1"
     }
 }
 
@@ -30,7 +32,7 @@ export async function createLink (did: string, account: AccountID, provider: any
         version: 2,
         type: 'eoa-tx',
         message: consentMessage.message,
-        signature: signatureResponse.signature.data,
+        signature: signatureResponse.Signature.Data,
         account: account.toString()
     }
     if (!opts.skipTimestamp) proof.timestamp = consentMessage.timestamp
@@ -41,7 +43,7 @@ export async function authenticate(message: string, account: AccountID, provider
     const addresses = await provider.getAccounts()
     const payload = asTransaction(addresses[0], JSON.stringify(message))
     const signatureResponse = await provider.sign(account.address, payload)
-    return signatureResponse.signature.data
+    return signatureResponse.Signature.Data
 }
 
 export async function validateLink (proof: LinkProof): Promise<LinkProof | null> {

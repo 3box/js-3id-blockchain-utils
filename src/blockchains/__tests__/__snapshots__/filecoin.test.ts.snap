@@ -1,8 +1,8 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`authenticate mainnet 1`] = `"4yGIDAltS6TIG+8LJgrhxAJ7E8wkqWoKWfSH9JSEUpwlXiK1BMGIT1t1tP5kgkHZoMS+brFbkihtBCIVcChsTwE="`;
+exports[`authenticate mainnet 1`] = `"F5gy3IHoKUNJOUEQQMHg1iTZGa4Ef3TeT+deaBKkkYFK3Aur5y3XuOL4NNygsn9lYPnPsvXUvtBiyy4+yZ6geQE="`;
 
-exports[`authenticate testnet 1`] = `"mZT9lhJBvrg+/elKOI/uwJWnsl/buGKZzNj2liujgqotMFVqOJ2KJVPFHvbvIJDbtpFjlcbBsAXtTeNwHePRnQE="`;
+exports[`authenticate testnet 1`] = `"APHUqaCLuyqunqfYJl8YAq3/p6oO9iiEAGkGQILzZAEMR/L28/F+iN2ismhMJCm9yr8VjIqgneiaFIkr65fimgA="`;
 
 exports[`createLink generate proof on mainnet 1`] = `
 Object {
@@ -10,7 +10,7 @@ Object {
   "message": "Create a new account link to your identity.
 
 did:3:bafysdfwefwe",
-  "signature": "ptn0BGzsCTD3tPjOtuCMhigE3A2BFadJkOahJ+AuPxNCCGSKTIfBVLb55QKPf0pl14+6YUnRAvdwk8lFc98aZAE=",
+  "signature": "1FtigSxmRbUCdjAAgotHcbq5al3vBkMCD8Fg4JhNj5siND0Orhol21/zLS52gkn19OiXUe00FukDv/KSErWD6gE=",
   "type": "eoa-tx",
   "version": 2,
 }
@@ -22,7 +22,7 @@ Object {
   "message": "Create a new account link to your identity.
 
 did:3:bafysdfwefwe",
-  "signature": "GuG1fGJQwLs1t33bp/esXhWCU3wIzENq9FBjntcQv2wNmk4Iu9D5KsnU3LpH8rGKPliQWHmkod0dOaJYrAS13QE=",
+  "signature": "YpSd1/zXbw4ga2v9Vihm8/mioRhBQsDhfHKoFuuFysoW3dsKwhiusuyZgF0/F1iIpcfDWuE6WzlbkDSHdoSebAE=",
   "type": "eoa-tx",
   "version": 2,
 }
