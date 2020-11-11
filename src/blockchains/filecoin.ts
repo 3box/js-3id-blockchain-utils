@@ -57,10 +57,14 @@ export async function validateLink (proof: LinkProof): Promise<LinkProof | null>
     }
     const payload = asTransaction(account.address, JSON.stringify(consentMessage))
     const transaction = signingTools.transactionSerialize(payload);
-    const recover = signingTools.verifySignature(proof.signature, transaction);
-    if (recover) {
-        return proof
-    } else {
+    try {
+        const recover = signingTools.verifySignature(proof.signature, transaction);
+        if (recover) {
+            return proof
+        } else {
+            return null
+        }
+    } catch {
         return null
     }
 }
