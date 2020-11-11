@@ -2,13 +2,14 @@ import {BlockchainHandler, BlockchainHandlerOpts} from "../blockchain-handler";
 import {AccountID} from "caip";
 import {ConsentMessage, getConsentMessage, LinkProof} from "../utils";
 import type { MessageParams } from '@zondax/filecoin-signing-tools'
+import * as bytes from 'uint8arrays'
 
 const namespace = 'fil'
 
 const moduleToImport = process.env.JEST_WORKER_ID ? "@zondax/filecoin-signing-tools/nodejs" : "@zondax/filecoin-signing-tools"
 
 function asTransaction(address: string, message: string): MessageParams {
-    const messageParams = Buffer.from(message).toString('base64')
+    const messageParams = bytes.toString(bytes.fromString(message), 'base64')
     return {
         From: address,
         To: address,
