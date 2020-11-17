@@ -1,4 +1,5 @@
-import {LocalFilecoinProvider, Network} from "@ukstv/local-filecoin-provider";
+import {LocalManagedProvider} from "@glif/local-managed-provider";
+import {Network} from "@glif/filecoin-address"
 import {authenticate, createLink, validateLink} from "../filecoin";
 import {AccountID} from "caip";
 
@@ -6,9 +7,9 @@ const did = 'did:3:bafysdfwefwe'
 const testnetPrivateKey = '7b2254797065223a22736563703235366b31222c22507269766174654b6579223a2257587362654d5176487a366f5668344b637262633045642b31362b3150766a6a504f3753514931355031343d227d'
 const mainnetPrivateKey = '7b2254797065223a22736563703235366b31222c22507269766174654b6579223a2257587362654d5176487a366f5668344b637262633045642b31362b3150766a6a554f3753514931355031343d227d'
 const blsPrivateKey = "7b2254797065223a22626c73222c22507269766174654b6579223a226e586841424f4163796856504b48326155596261796f4475752f4c6f32515a2b6662622f6f736a2f34456f3d227d";
-const testnetProvider = new LocalFilecoinProvider(testnetPrivateKey, Network.TEST)
-const mainnetProvider = new LocalFilecoinProvider(mainnetPrivateKey)
-const blsMainnetProvider = new LocalFilecoinProvider(blsPrivateKey, Network.MAIN)
+const testnetProvider = new LocalManagedProvider(testnetPrivateKey, Network.TEST)
+const mainnetProvider = new LocalManagedProvider(mainnetPrivateKey, Network.MAIN)
+const blsMainnetProvider = new LocalManagedProvider(blsPrivateKey, Network.MAIN)
 
 describe('createLink', () => {
     test('generate proof on testnet', async () => {
