@@ -46,7 +46,7 @@
     "typescript": "^3.9.3",
     "@zondax/filecoin-signing-tools": "^0.12.0"
   },
-  "optionalDependencies": {
+  "peerDependencies": {
     "@polkadot/util-crypto": "^3.6.1",
     "@zondax/filecoin-signing-tools": "^0.12.0"
   },
