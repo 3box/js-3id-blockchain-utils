@@ -7,13 +7,16 @@
 
 This package contains a bunch of utilities that is used by 3ID and 3Box in order to create and verify links from blockchain addresses.
 
-## Tabel of Contents
-- [Install](#install)
-- [Usage](#usage)
-- [Supported blockchains](#supported-blockchains)
-- [Contributing](#contributing)
-  - [Test](#Test)
-- [License](#license)
+## Table of Contents
+- [3id-blockchain-utils](#3id-blockchain-utils)
+  - [Table of Contents](#table-of-contents)
+  - [Install](#install)
+  - [Usage](#usage)
+  - [Supported blockchains](#supported-blockchains)
+  - [Maintainers](#maintainers)
+  - [Adding support for a blockchain](#adding-support-for-a-blockchain)
+    - [Test](#test)
+  - [Licence](#licence)
 
 ## Install
 ```
@@ -54,6 +57,7 @@ Below you can see a table which lists supported blockchains and their provider o
 |------------|-----------|---------------------------------|
 | Ethereum   | [eip155](https://github.com/ChainAgnostic/CAIPs/blob/master/CAIPs/caip-3.md)    | metamask-like ethereum provider |
 | Filecoin   | fil       | [Filecoin Wallet Provider](https://github.com/openworklabs/filecoin-wallet-provider) |
+| Cosmos   | cosmos       | [Tendermin Signer](https://github.com/tendermint/sig) |
 
 ## Maintainers
 [@oed](https://github.com/oed)
