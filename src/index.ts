@@ -4,6 +4,7 @@ import ethereum from './blockchains/ethereum'
 import filecoin from './blockchains/filecoin'
 import polkadot from './blockchains/polkadot'
 import eosio from './blockchains/eosio'
+import cosmos from './blockchains/cosmos'
 
 const findDID = (did: string): string | undefined => did.match(/(did:(3|muport):[a-zA-Z0-9])\w+/)?.[0]
 
@@ -11,7 +12,8 @@ const handlers = {
   [ethereum.namespace]: ethereum,
   [filecoin.namespace]: filecoin, 
   [polkadot.namespace]: polkadot,
-  [eosio.namespace]: eosio
+  [eosio.namespace]: eosio,
+  [cosmos.namespace]: cosmos
 }
 
 async function createLink (

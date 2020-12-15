@@ -43,7 +43,7 @@ async function createLink(did: string, account: AccountID, provider: any, opts: 
   const { message, timestamp } = getConsentMessage(did, !opts?.skipTimestamp);
   const linkMessageHex = stringHex(message);
   const res = await signTx(asTransaction(account.address, linkMessageHex), getMetaData(), provider);
-  const signature = bytesToBase64(toCanonicalJSONBytes(res))
+  const signature = bytesToBase64(toCanonicalJSONBytes(res));
   const proof: LinkProof = {
     version: 2,
     type: 'eoa',
@@ -56,20 +56,22 @@ async function createLink(did: string, account: AccountID, provider: any, opts: 
 }
 
 async function authenticate(message: string, account: AccountID, provider: any): Promise<string> {
-  return;
+  const linkMessageHex = stringHex(message);
+  const res = await signTx(asTransaction(account.address, linkMessageHex), getMetaData(), provider);
+  return bytesToBase64(toCanonicalJSONBytes(res));
 }
 
 async function validateLink(proof: LinkProof): Promise<LinkProof | null> {
-    const payload = JSON.parse(Buffer.from(base64ToBytes(proof.signature)).toString());
-    const message = stringHex(proof.message)
-    const signer_address = createAddress(base64ToBytes(payload.signatures[0].pub_key.value))
-    const account = new AccountID(proof.account)
-    const is_sig_valid = verifyTx(payload, getMetaData())
-    if(is_sig_valid && payload.memo === message && signer_address === account.address){
-        return proof
-    }else{
-        return null
-    }
+  const payload = JSON.parse(Buffer.from(base64ToBytes(proof.signature)).toString());
+  const message = stringHex(proof.message);
+  const signer_address = createAddress(base64ToBytes(payload.signatures[0].pub_key.value));
+  const account = new AccountID(proof.account);
+  const is_sig_valid = verifyTx(payload, getMetaData());
+  if (is_sig_valid && payload.memo === message && signer_address === account.address) {
+    return proof;
+  } else {
+    return null;
+  }
 }
 
 const Handler: BlockchainHandler = {
