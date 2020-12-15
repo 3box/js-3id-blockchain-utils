@@ -7,8 +7,6 @@ import * as uint8arrays from 'uint8arrays';
 
 const namespace = 'cosmos';
 
-const stringHex = (str: string): string => `0x${uint8arrays.toString(uint8arrays.fromString(str), 'base16')}`;
-
 // return data in the cosmos unsigned transaction format
 function asTransaction(address: string, message: string): Tx {
   return {
@@ -41,13 +39,13 @@ function getMetaData(): SignMeta {
 
 async function createLink(did: string, account: AccountID, provider: any, opts: BlockchainHandlerOpts): Promise<LinkProof> {
   const { message, timestamp } = getConsentMessage(did, !opts?.skipTimestamp);
-  const linkMessageHex = stringHex(message);
-  const res = await signTx(asTransaction(account.address, linkMessageHex), getMetaData(), provider);
-  const signature = bytesToBase64(toCanonicalJSONBytes(res));
+  const encodedMsg = bytesToBase64(uint8arrays.fromString(message));
+  const res = await signTx(asTransaction(account.address, encodedMsg), getMetaData(), provider);
+  const signature = bytesToBase64(toCanonicalJSONBytes(res.signatures[0]));
   const proof: LinkProof = {
     version: 2,
     type: 'eoa',
-    message: linkMessageHex,
+    message: message,
     signature,
     account: account.toString(),
   };
@@ -62,16 +60,13 @@ async function authenticate(message: string, account: AccountID, provider: any):
 }
 
 async function validateLink(proof: LinkProof): Promise<LinkProof | null> {
-  const payload = JSON.parse(Buffer.from(base64ToBytes(proof.signature)).toString());
-  const message = stringHex(proof.message);
-  const signer_address = createAddress(base64ToBytes(payload.signatures[0].pub_key.value));
   const account = new AccountID(proof.account);
-  const is_sig_valid = verifyTx(payload, getMetaData());
-  if (is_sig_valid && payload.memo === message && signer_address === account.address) {
-    return proof;
-  } else {
-    return null;
-  }
+  const encodedMsg = bytesToBase64(uint8arrays.fromString(proof.message));
+  const payload = asTransaction(account.address, encodedMsg);
+  const sigObj = JSON.parse(Buffer.from(base64ToBytes(proof.signature)).toString());
+  const Tx = { ...payload, ...getMetaData(), signatures: [sigObj] };
+  const is_sig_valid = verifyTx(Tx, getMetaData());
+  return is_sig_valid ? proof : null;
 }
 
 const Handler: BlockchainHandler = {
