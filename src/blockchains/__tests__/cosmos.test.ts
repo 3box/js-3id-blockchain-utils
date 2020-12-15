@@ -32,4 +32,13 @@ describe('Blockchain: Cosmos', () => {
       await expect(cosmos.validateLink(proof)).resolves.toEqual(null);
     });
   });
+
+  describe('authenticate', () => {
+    test('create proof for cosmoshub3', async () => {
+      const account = addressToAccountID(localProvider.address);
+      const result = await cosmos.authenticate('msg', account, localProvider);
+      expect(result).toMatchSnapshot();
+    });
+  });
+
 });

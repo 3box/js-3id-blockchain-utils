@@ -1,11 +1,13 @@
 import { BlockchainHandler, BlockchainHandlerOpts } from '../blockchain-handler';
 import { AccountID } from 'caip';
 import { getConsentMessage, LinkProof } from '../utils';
-import { signTx, Tx, SignMeta, verifyTx, createAddress } from '@tendermint/sig';
+import { signTx, Tx, SignMeta, verifyTx } from '@tendermint/sig';
 const { base64ToBytes, bytesToBase64, toCanonicalJSONBytes } = require('@tendermint/belt');
 import * as uint8arrays from 'uint8arrays';
 
 const namespace = 'cosmos';
+
+const stringEncode = (str: string): string => bytesToBase64(uint8arrays.fromString(str));
 
 // return data in the cosmos unsigned transaction format
 function asTransaction(address: string, message: string): Tx {
@@ -39,7 +41,7 @@ function getMetaData(): SignMeta {
 
 async function createLink(did: string, account: AccountID, provider: any, opts: BlockchainHandlerOpts): Promise<LinkProof> {
   const { message, timestamp } = getConsentMessage(did, !opts?.skipTimestamp);
-  const encodedMsg = bytesToBase64(uint8arrays.fromString(message));
+  const encodedMsg = stringEncode(message);
   const res = await signTx(asTransaction(account.address, encodedMsg), getMetaData(), provider);
   const signature = bytesToBase64(toCanonicalJSONBytes(res.signatures[0]));
   const proof: LinkProof = {
@@ -54,9 +56,9 @@ async function createLink(did: string, account: AccountID, provider: any, opts: 
 }
 
 async function authenticate(message: string, account: AccountID, provider: any): Promise<string> {
-  const linkMessageHex = stringHex(message);
-  const res = await signTx(asTransaction(account.address, linkMessageHex), getMetaData(), provider);
-  return bytesToBase64(toCanonicalJSONBytes(res));
+  const encodedMsg = stringEncode(message);
+  const res = await signTx(asTransaction(account.address, encodedMsg), getMetaData(), provider);
+  return bytesToBase64(toCanonicalJSONBytes(res.signatures[0]));
 }
 
 async function validateLink(proof: LinkProof): Promise<LinkProof | null> {

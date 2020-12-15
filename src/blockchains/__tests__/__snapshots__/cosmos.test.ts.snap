@@ -1,5 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Blockchain: Cosmos authenticate create proof for cosmoshub3 1`] = `"eyJwdWJfa2V5Ijp7InR5cGUiOiJ0ZW5kZXJtaW50L1B1YktleVNlY3AyNTZrMSIsInZhbHVlIjoiQTQxWEVNTHROeG9uaGVTYXA1ODk3N2RzRmFJOHlVa3c0d1ZLK2JHd080SXIifSwic2lnbmF0dXJlIjoiVGt1SkJJTWpPQUJaZFhXY2VhM3owN0lPZ0VCeEx3b1R5YzlFaHlsaXhFRmZsWmJyS2VTbmFPNWJ0c2d3T3JsOEpEeGhBejNqREpqcHM2c1VXRHVOV0E9PSJ9"`;
+
 exports[`Blockchain: Cosmos createLink create proof for cosmoshub3 1`] = `
 Object {
   "account": "cosmos1gs6gu0w9xvqcfhm3nlhnmqkf8aphnsxyjlgpqd@cosmos:cosmoshub-3",
