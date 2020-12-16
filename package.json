@@ -4,7 +4,8 @@
   "version": "1.0.0",
   "description": "Blockchain utils for 3ID",
   "scripts": {
-    "build": "pnpm recursive run build"
+    "build": "pnpm recursive run build",
+    "test": "pnpm recursive run test"
   },
   "author": "oed",
   "license": "(Apache-2.0 OR MIT)",
