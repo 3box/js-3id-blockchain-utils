@@ -36,7 +36,6 @@
     "@polkadot/util-crypto": "^3.6.1",
     "@smontero/eosio-local-provider": "0.0.3",
     "@smontero/eosio-signing-tools": "0.0.6",
-    "@tendermint/belt": "^0.3.0",
     "@tendermint/sig": "^0.6.0",
     "@types/jest": "^25.2.3",
     "@typescript-eslint/eslint-plugin": "^2.19.0",

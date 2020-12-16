@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Blockchain: Cosmos authenticate create proof for cosmoshub3 1`] = `"0xf99943ec432cdc4a43d0546313f14c2a4d00de96a9fbf3f3bf591e1e20a0577a"`;
+exports[`Blockchain: Cosmos authenticate create proof for cosmoshub3 1`] = `"0x3c6781b52b86c7f2202c30995333b02f16a56d4d9f310b2c952cb87a8ad2966e"`;
 
 exports[`Blockchain: Cosmos createLink create proof for cosmoshub3 1`] = `
 Object {
@@ -8,7 +8,7 @@ Object {
   "message": "Create a new account link to your identity.
 
 did:3:bafysdfwefwe",
-  "signature": "eyJwdWJfa2V5Ijp7InR5cGUiOiJ0ZW5kZXJtaW50L1B1YktleVNlY3AyNTZrMSIsInZhbHVlIjoiQTQxWEVNTHROeG9uaGVTYXA1ODk3N2RzRmFJOHlVa3c0d1ZLK2JHd080SXIifSwic2lnbmF0dXJlIjoicUw3d2NISkNKeXNOajF2VzNlUlRGb0xMd3oyZENvdVZINGorUkpsVnoyb2JmVFNuR0ZEcER6MlpRajJlanphYlpDNGl0VTVQYjQxOTdwSHF4V3hSNEE9PSJ9",
+  "signature": "eyJzaWduYXR1cmUiOiJxTDd3Y0hKQ0p5c05qMXZXM2VSVEZvTEx3ejJkQ291Vkg0aitSSmxWejJvYmZUU25HRkRwRHoyWlFqMmVqemFiWkM0aXRVNVBiNDE5N3BIcXhXeFI0QT09IiwicHViX2tleSI6eyJ0eXBlIjoidGVuZGVybWludC9QdWJLZXlTZWNwMjU2azEiLCJ2YWx1ZSI6IkE0MVhFTUx0TnhvbmhlU2FwNTg5Nzdkc0ZhSTh5VWt3NHdWSytiR3dPNElyIn19",
   "type": "eoa",
   "version": 2,
 }
