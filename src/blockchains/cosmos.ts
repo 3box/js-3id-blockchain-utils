@@ -4,6 +4,7 @@ import { getConsentMessage, LinkProof } from '../utils';
 import { signTx, Tx, SignMeta, verifyTx } from '@tendermint/sig';
 const { base64ToBytes, bytesToBase64, toCanonicalJSONBytes } = require('@tendermint/belt');
 import * as uint8arrays from 'uint8arrays';
+import { sha256  } from 'js-sha256';
 
 const namespace = 'cosmos';
 
@@ -58,7 +59,7 @@ async function createLink(did: string, account: AccountID, provider: any, opts: 
 async function authenticate(message: string, account: AccountID, provider: any): Promise<string> {
   const encodedMsg = stringEncode(message);
   const res = await signTx(asTransaction(account.address, encodedMsg), getMetaData(), provider);
-  return bytesToBase64(toCanonicalJSONBytes(res.signatures[0]));
+  return `0x${sha256(bytesToBase64(toCanonicalJSONBytes(res.signatures[0])))}`
 }
 
 async function validateLink(proof: LinkProof): Promise<LinkProof | null> {
