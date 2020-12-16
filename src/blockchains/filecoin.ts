@@ -1,6 +1,6 @@
 import {BlockchainHandler, BlockchainHandlerOpts} from "../blockchain-handler";
 import {AccountID} from "caip";
-import {ConsentMessage, getConsentMessage, LinkProof} from "../utils";
+import {getConsentMessage, LinkProof} from "../utils";
 import type { MessageParams } from '@zondax/filecoin-signing-tools'
 import * as uint8arrays from 'uint8arrays'
 
@@ -46,7 +46,7 @@ export async function authenticate(message: string, account: AccountID, provider
 }
 
 export async function validateLink (proof: LinkProof): Promise<LinkProof | null> {
-    const signingTools = await import("@zondax/filecoin-signing-tools")
+    const signingTools = await eval('import("@zondax/filecoin-signing-tools")');
     const account = new AccountID(proof.account)
     const payload = asTransaction(account.address, proof.message)
     const transaction = signingTools.transactionSerialize(payload);
