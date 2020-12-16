@@ -11,9 +11,6 @@
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "sourceMap": true,
-    "baseUrl": "./packages",
-    "outDir": "lib",
-    "rootDir": "src",
     "typeRoots": [
       "./@types", "./node_modules/@types"
     ]
@@ -23,6 +20,5 @@
     "**/fixtures.ts",
     "**/*.spec.ts",
     "**/*.test.ts"
-  ],
-  "include": ["./src/**/*"]
+  ]
 }
