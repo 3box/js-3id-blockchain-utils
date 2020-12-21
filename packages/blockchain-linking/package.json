@@ -1,5 +1,5 @@
 {
-  "name": "@3id-blockchain-utils/linking",
+  "name": "@ceramicnetwork/blockchain-linking",
   "version": "1.0.0",
   "description": "Blockchain utils for linking blockchain accounts to DID",
   "main": "lib/index.js",

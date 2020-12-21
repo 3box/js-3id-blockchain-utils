@@ -1,8 +1,8 @@
 {
-  "name": "3id-blockchain-utils",
+  "name": "@ceramicnetwork/blockchain",
   "private": true,
   "version": "1.0.0",
-  "description": "Blockchain utils for 3ID",
+  "description": "Blockchain utils for DID",
   "scripts": {
     "build": "pnpm recursive run build",
     "test": "pnpm recursive run test"

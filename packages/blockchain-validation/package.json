@@ -1,5 +1,5 @@
 {
-  "name": "@3id-blockchain-utils/validation",
+  "name": "@ceramicnetwork/blockchain-validation",
   "version": "1.0.0",
   "description": "Blockchain utils for validation of linked blockchain accounts",
   "main": "lib/index.js",
@@ -15,7 +15,7 @@
   "author": "oed",
   "license": "(Apache-2.0 OR MIT)",
   "dependencies": {
-    "@3id-blockchain-utils/linking": "workspace:*",
+    "@ceramicnetwork/blockchain-linking": "workspace:*",
     "@ethersproject/contracts": "^5.0.8",
     "@ethersproject/providers": "^5.0.17",
     "@ethersproject/wallet": "^5.0.9",
