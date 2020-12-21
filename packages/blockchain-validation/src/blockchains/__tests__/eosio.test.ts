@@ -1,7 +1,7 @@
 import { EOSIOProvider } from "@smontero/eosio-local-provider";
 import { validateLink } from "../eosio";
 import { AccountID } from "caip";
-import * as linking from "@3id-blockchain-utils/linking";
+import * as linking from "@ceramicnetwork/blockchain-linking";
 
 jest.setTimeout(15000);
 

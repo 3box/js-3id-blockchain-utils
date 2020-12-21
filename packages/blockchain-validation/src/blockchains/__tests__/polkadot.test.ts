@@ -5,7 +5,7 @@ import { SignerPayloadRaw } from "@polkadot/types/types";
 import { TypeRegistry } from "@polkadot/types/create";
 import { createTestKeyring } from "@polkadot/keyring/testing";
 import { assert, hexToU8a, u8aToHex } from "@polkadot/util";
-import * as linking from "@3id-blockchain-utils/linking";
+import * as linking from "@ceramicnetwork/blockchain-linking";
 import { cryptoWaitReady } from "@polkadot/util-crypto";
 
 const did = "did:3:bafysdfwefwe";

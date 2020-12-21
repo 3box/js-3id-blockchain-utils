@@ -1,11 +1,11 @@
 import { AccountID } from "caip";
-import { encodeRpcMessage } from "@3id-blockchain-utils/linking";
+import { encodeRpcMessage } from "@ceramicnetwork/blockchain-linking";
 import ganache from "ganache-core";
 import ethereum from "../ethereum";
 import * as sigUtils from "eth-sig-util";
 import { ContractFactory, Contract } from "@ethersproject/contracts";
 import * as providers from "@ethersproject/providers";
-import * as linking from "@3id-blockchain-utils/linking";
+import * as linking from "@ceramicnetwork/blockchain-linking";
 import { proofs } from "./fixtures";
 
 const CONTRACT_WALLET_ABI = [
