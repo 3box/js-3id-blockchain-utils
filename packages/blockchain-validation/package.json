@@ -5,7 +5,7 @@
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
   "scripts": {
-    "test": "../../node_modules/.bin/jest --coverage",
+    "test": "node --experimental-vm-modules ../../node_modules/jest/bin/jest.js --coverage",
     "build": "../../node_modules/.bin/tsc -p tsconfig.json",
     "prepublishOnly": "pnpm run build",
     "prepare": "pnpm run build",
