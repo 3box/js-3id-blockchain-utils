@@ -2,13 +2,14 @@ import { LinkProof } from "@ceramicnetwork/blockchain-linking";
 import ethereum from "./blockchains/ethereum";
 import filecoin from "./blockchains/filecoin";
 import polkadot from "./blockchains/polkadot";
+import eosio from "./blockchains/eosio";
 import { AccountID } from "caip";
 
 const handlers = {
   [ethereum.namespace]: ethereum,
   [filecoin.namespace]: filecoin,
   [polkadot.namespace]: polkadot,
-  // [eosio.namespace]: eosio
+  [eosio.namespace]: eosio,
 };
 
 const findDID = (did: string): string | undefined =>
