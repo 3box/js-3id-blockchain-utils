@@ -1,6 +1,6 @@
 import { BlockchainHandler } from "../blockchain-handler";
 import { AccountID } from "caip";
-import * as linking from "@3id-blockchain-utils/linking";
+import * as linking from "@ceramicnetwork/blockchain-linking";
 import * as signingTools from "@zondax/filecoin-signing-tools";
 
 const namespace = "fil";

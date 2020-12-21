@@ -1,4 +1,4 @@
-import { LinkProof } from "@3id-blockchain-utils/linking";
+import { LinkProof } from "@ceramicnetwork/blockchain-linking";
 
 export interface BlockchainHandler {
   namespace: string;

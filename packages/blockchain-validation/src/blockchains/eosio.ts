@@ -1,7 +1,7 @@
 import { AccountID } from "caip";
 import { SigningTools } from "@smontero/eosio-signing-tools";
 import { BlockchainHandler } from "../blockchain-handler";
-import * as linking from "@3id-blockchain-utils/linking";
+import * as linking from "@ceramicnetwork/blockchain-linking";
 
 const namespace = "eosio";
 

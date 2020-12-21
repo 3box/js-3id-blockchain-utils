@@ -3,7 +3,7 @@ import { Contract } from "@ethersproject/contracts";
 import * as providers from "@ethersproject/providers";
 import { AccountID } from "caip";
 import * as uint8arrays from "uint8arrays";
-import { LinkProof } from "@3id-blockchain-utils/linking";
+import { LinkProof } from "@ceramicnetwork/blockchain-linking";
 import { BlockchainHandler } from "../blockchain-handler";
 
 const ADDRESS_TYPES = {

@@ -1,4 +1,4 @@
-import { LinkProof } from "@3id-blockchain-utils/linking";
+import { LinkProof } from "@ceramicnetwork/blockchain-linking";
 import ethereum from "./blockchains/ethereum";
 import filecoin from "./blockchains/filecoin";
 import polkadot from "./blockchains/polkadot";

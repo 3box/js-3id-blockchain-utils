@@ -1,7 +1,7 @@
 import { BlockchainHandler } from "../blockchain-handler";
 import { AccountID } from "caip";
 import { signatureVerify } from "@polkadot/util-crypto";
-import { LinkProof } from "@3id-blockchain-utils/linking";
+import { LinkProof } from "@ceramicnetwork/blockchain-linking";
 
 const namespace = "polkadot";
 
