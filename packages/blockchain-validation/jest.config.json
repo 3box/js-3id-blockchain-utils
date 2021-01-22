@@ -1,0 +1,11 @@
+{
+  "moduleFileExtensions": ["js", "json", "ts"],
+  "testRegex": ".(spec|test).ts$",
+  "transform": {
+    "^.+\\.ts$": "ts-jest"
+  },
+  "testEnvironment": "node",
+  "moduleNameMapper": {
+    "^@zondax/filecoin-signing-tools$": "@zondax/filecoin-signing-tools/nodejs"
+  }
+}
